@@ -1,6 +1,7 @@
 <?php
 
     $images = false;
+    define("TITLE","Hello from PHP");
     $title = "Hello from PHP";
     $js = "
         <script>
@@ -53,8 +54,45 @@
     if($images){    
         echo "<img src=\"https://www.ambionics.io/images/iconv-cve-2024-2961-p1/iconv-cve-2024-2961-p1.png\" alt=\"\">";
     }
-    
+    $num1 = 123;
+    $num2 = 456;
+
+    echo "<br>" . $num1+$num2;
+    echo "<br>" . $num1-$num2;
+    echo "<br>" . $num1*$num2;
+    echo "<br>" . $num1/$num2;
+    // echo "<br>" . ($num1**$num2);
+    // var_dump($num1*10000);
+    echo "<br>" . $num1+=25;
+
+
+    // Строки
+    $title = "text";
+
+    $text = "
+        <h1>{$title}</h1>
+    ";
+    $text2 = '';
+
+    $text .= "<p>".TITLE."</p>";
+
+    echo $text;
+
+    $password = md5("Qwerty!12345");
+    $password2 = md5("Qwerty!12345");
+    // explode,trim,
+
+    echo substr(TITLE,0,5);
+
+    $html = "<script>alert(\"hacked!!!\")</script>";
+
+    echo html_entity_decode($html); 
+    echo htmlentities($html); 
+
+
+
     ?>
-    <?php echo $js;?>
+    <?php //echo $password?>
+    <?php //echo $password2?>
 </body>
 </html>
