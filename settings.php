@@ -44,4 +44,11 @@
     ];
 
         // var_dump($data);
+
+
+
+        $page_is_on = true;
+
+
+
 ?>

@@ -1,4 +1,9 @@
+
 <?php include "head.php"?>
+
+
+<?php if(!$page_is_on) die("Page is no allowed");?>
+
 <?php include_once "navbar.php"?>
 
 <div class="container">
