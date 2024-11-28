@@ -9,29 +9,33 @@
 <div class="container">
     <?php 
         $out = "";
+        
+    if(!isset($_GET["tab"])) return;
+
         switch($_GET["tab"]){
-            case "p1":'
+            case "p1": $out = '
                <div class="card">
                     <div class="card-body">
                         This is page 1
                     </div>
                 </div>';break;
-            case "p2":'
+            case "p2":$out = '
                 <div class="card">
                      <div class="card-body">
                          This is page 2
                      </div>
                 </div>';break; 
-            case "p3":'
+            case "p3":$out = '
                 <div class="card">
                      <div class="card-body">
                          This is page 3
                      </div>
                 </div>';break;
-                 
-            default:'nothing';break;          
+
+            default:$out = 'nothing';break;          
         }
-    
+
+        echo $out;
     ?>
 
 
