@@ -68,14 +68,23 @@ $sql = "SELECT * from posts";
 
     function update_user($data){
         global $link;
+
+        $name = $link->real_escape_string($data["name"]);
+        $surname = $link->real_escape_string($data["surname"]);
+        $email = $link->real_escape_string($data["email"]);
+        $username = $link->real_escape_string($data["username"]);
+        $id = $link->real_escape_string($data["id"]);
+
+
         $sql = "UPDATE `Users` SET
-         name = '{$data["name"]}', 
-         surname = '{$data["surname"]}', 
-         email = '{$data["email"]}', 
-         username = '{$data["username"]}'
-         WHERE `Users`.`id` = {$data["id"]};";
+         name = '{$name}', 
+         surname = '{$surname}', 
+         email = '{$email}', 
+         username = '{$username}'
+         WHERE `Users`.`id` = {$id};";
  
         $result = $link->query($sql);
+        header('location: users.php');
 
         if(!$result){
             exit($link->error_get_last);
