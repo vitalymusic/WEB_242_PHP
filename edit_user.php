@@ -9,7 +9,7 @@
     $user_data = get_user($id)[0];
 ?>
 
-<h1>Edit User Alex</h1>
+<h1>Edit User <?=$user_data["name"]?></h1>
 
     <form action="functions.php?update=true" method="POST">
     <div class="mb-3">

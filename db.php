@@ -6,7 +6,5 @@
     exit($link->connect_error);
  }
 
-    echo "Connected";
-
     ?>
 
