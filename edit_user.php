@@ -6,23 +6,9 @@
 
 <?php 
     $id = $_GET["id"];
-    
-    var_dump(get_user($id));
-
     $user_data = get_user($id)[0];
-
-
-
 ?>
 
-<!-- 
-            <td><?=$user["name"]?></td>
-            <td><?=$user["surname"]?></td>
-            <td><?=$user["email"]?></td>
-            <td><?=$user["username"]?></td>
-            <td><?=$user["password"]?></td>
-
--->
 <h1>Edit User Alex</h1>
 
     <form action="functions.php?update=true" method="POST">

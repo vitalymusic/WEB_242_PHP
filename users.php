@@ -13,8 +13,6 @@
         <td>Password</td>
         <td>Edit</td>
     <tr>
-        
-    <?php var_dump(get_users()) ?>
     <?php foreach(get_users() as $user): ?>
         <tr>
             <td><?=$user["name"]?></td>
