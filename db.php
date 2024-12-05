@@ -48,4 +48,6 @@
 
 
 ?>
-CRUD - application;
+CRUD - application in PHP;
+create - Read-Update-Delete;
+
