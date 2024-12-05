@@ -1,4 +1,6 @@
-<?php
+<?php   include "db.php";
+
+
 
 function get_posts(){
 
@@ -64,10 +66,36 @@ $sql = "SELECT * from posts";
     }
 
 
+    function update_user($data){
+        global $link;
+        $sql = "UPDATE `Users` SET
+         name = '{$data["name"]}', 
+         surname = '{$data["surname"]}', 
+         email = '{$data["email"]}', 
+         username = '{$data["username"]}'
+         WHERE `Users`.`id` = {$data["id"]};";
+ 
+        $result = $link->query($sql);
+
+        if(!$result){
+            exit($link->error_get_last);
+        }
+
+
+
+    }
 
 
 
 
+
+    if(
+        isset($_POST) 
+        && isset($_GET["update"]) 
+        && $_GET["update"]==true){  
+        update_user($_POST);    
+    
+    }
 
 ?>
 <!-- CRUD - application in PHP;

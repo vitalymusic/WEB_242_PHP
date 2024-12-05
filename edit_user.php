@@ -25,7 +25,7 @@
 -->
 <h1>Edit User Alex</h1>
 
-    <form action="" method="POST">
+    <form action="functions.php?update=true" method="POST">
     <div class="mb-3">
         <label for="name" class="form-label">
             Name</label>
