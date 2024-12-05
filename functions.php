@@ -42,7 +42,6 @@ $sql = "SELECT * from posts";
         $data = [];
         global $link;    
         $sql = "SELECT * from Users;";
-
         $result = $link->query($sql);
 
         if($result->num_rows>0){
@@ -51,6 +50,17 @@ $sql = "SELECT * from posts";
             }
         }
         return $data;
+    }
+
+
+    function get_user(int $id){
+        $data = [];
+        global $link;  
+        $sql = "SELECT * FROM `Users` WHERE users.id = {$id};";
+        $result = $link->query($sql);
+        $data[] = $result->fetch_assoc();
+        return $data;
+
     }
 
 

@@ -2,8 +2,20 @@
 <?php include "navbar.php"?>
 
 <div class="container">
-<h1>Edit User Alex</h1>
+
+
+<?php 
+    $id = $_GET["id"];
     
+    var_dump(get_user($id));
+
+    
+
+?>
+
+
+<h1>Edit User Alex</h1>
+
 
 </div>
 
