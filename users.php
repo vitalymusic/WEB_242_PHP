@@ -22,7 +22,7 @@
             <td><?=$user["email"]?></td>
             <td><?=$user["username"]?></td>
             <td><?=$user["password"]?></td>
-            <td><a href="" class="btn btn-outline-secondary">Edit</td>
+            <td><a href="edit_user.php?id=<?=$user["id"]?>" class="btn btn-outline-secondary">Edit</td>
         </tr>    
     
     <?php endforeach?>    
