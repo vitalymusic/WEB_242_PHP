@@ -12,7 +12,21 @@
         <td>Username</td>
         <td>Password</td>
         <td>Edit</td>
-    <tr>    
+    <tr>
+        
+    <?php var_dump(get_users()) ?>
+    <?php foreach(get_users() as $user): ?>
+        <tr>
+            <td><?=$user["name"]?></td>
+            <td><?=$user["surname"]?></td>
+            <td><?=$user["email"]?></td>
+            <td><?=$user["username"]?></td>
+            <td><?=$user["password"]?></td>
+            <td><a href="" class="btn btn-outline-secondary">Edit</td>
+        </tr>    
+    
+    <?php endforeach?>    
+
 </table>
 </div>
 

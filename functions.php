@@ -1,6 +1,7 @@
 <?php
 
-function get_pots(){
+function get_posts(){
+
 $sql = "SELECT * from posts";
 
     $result = $link->query($sql);
@@ -24,7 +25,7 @@ $sql = "SELECT * from posts";
 
 }
 
-    function delPost($id){
+    function del_post($id){
         global $link;
 
         $sql = "DELETE FROM `posts` WHERE id={$id}";
@@ -36,6 +37,26 @@ $sql = "SELECT * from posts";
         }
 
     }
+
+    function get_users(){
+        $data = [];
+        global $link;    
+        $sql = "SELECT * from Users;";
+
+        $result = $link->query($sql);
+
+        if($result->num_rows>0){
+            while($row = $result->fetch_assoc()){
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
+
+
+
+
+
 
 
 ?>
