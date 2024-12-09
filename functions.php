@@ -84,15 +84,42 @@ $sql = "SELECT * from posts";
          WHERE `Users`.`id` = {$id};";
  
         $result = $link->query($sql);
-        header('location: users.php');
-
         if(!$result){
             exit($link->error_get_last);
         }
 
+        header('location: users.php');
 
-
+        
     }
+
+    function create_user($data){
+        global $link;
+
+        $name = $link->real_escape_string($data["name"]);
+        $surname = $link->real_escape_string($data["surname"]);
+        $email = $link->real_escape_string($data["email"]);
+        $username = $link->real_escape_string($data["username"]);
+        $id = $link->real_escape_string($data["id"]);
+
+        $sql = "INSERT INTO `Users` 
+        (name, surname, email, username) 
+        VALUES 
+        ('{$name}','{$surname}','{$email}','{$username}'";
+ 
+
+        $result = $link->query($sql);
+        if(!$result){
+            exit($link->error);
+        }
+
+        header('location: users.php');
+
+        
+    }
+
+
+
 
 
 
@@ -103,6 +130,14 @@ $sql = "SELECT * from posts";
         && isset($_GET["update"]) 
         && $_GET["update"]==true){  
         update_user($_POST);    
+    
+    }
+
+    if(
+        isset($_POST) 
+        && isset($_GET["create"]) 
+        && $_GET["create"]==true){  
+        create_user($_POST);    
     
     }
 

@@ -26,6 +26,10 @@
     <?php endforeach?>    
 
 </table>
+
+<div>
+    <a href="create_user.php" class="btn btn-outline-primary">+ Create user</a>
+</div>
 </div>
 
 <?php include "foot.php"?>
