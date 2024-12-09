@@ -100,12 +100,8 @@ $sql = "SELECT * from posts";
         $surname = $link->real_escape_string($data["surname"]);
         $email = $link->real_escape_string($data["email"]);
         $username = $link->real_escape_string($data["username"]);
-        $id = $link->real_escape_string($data["id"]);
 
-        $sql = "INSERT INTO `Users` 
-        (name, surname, email, username) 
-        VALUES 
-        ('{$name}','{$surname}','{$email}','{$username}'";
+        $sql = "INSERT INTO Users (name,surname,email,username) VALUES ('{$name}','{$surname}','{$email}','{$username}')";
  
 
         $result = $link->query($sql);
