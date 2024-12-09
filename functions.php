@@ -102,7 +102,6 @@ $sql = "SELECT * from posts";
         $username = $link->real_escape_string($data["username"]);
 
         $sql = "INSERT INTO Users (name,surname,email,username) VALUES ('{$name}','{$surname}','{$email}','{$username}')";
- 
 
         $result = $link->query($sql);
         if(!$result){
@@ -115,6 +114,18 @@ $sql = "SELECT * from posts";
     }
 
 
+    function delete_user($id){
+        global $link;
+
+        $sql = "DELETE FROM `Users` WHERE id={$id}";
+        $result = $link->query($sql);
+        if(!$result){
+            exit($link->error);
+        }
+
+        header('location: users.php');
+
+    }
 
 
 
@@ -135,6 +146,12 @@ $sql = "SELECT * from posts";
         && $_GET["create"]==true){  
         create_user($_POST);    
     
+    }
+
+    if(isset($_GET["id"]) 
+    && isset($_GET["delete"]) 
+    && $_GET["delete"]==true){
+        delete_user($_GET["id"]);
     }
 
 ?>
