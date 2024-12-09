@@ -43,7 +43,7 @@
                 if(confirm("Really want to delete???")){
                 fetch(event.target.href)
                     .then(location.reload())
-        }
+                }
         }   
     }
     
