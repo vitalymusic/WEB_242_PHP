@@ -116,14 +116,14 @@ $sql = "SELECT * from posts";
 
     function delete_user($id){
         global $link;
-
+        // exit("deleted");
         $sql = "DELETE FROM `Users` WHERE id={$id}";
         $result = $link->query($sql);
         if(!$result){
             exit($link->error);
         }
 
-        header('location: users.php');
+        // header('location: users.php');
 
     }
 
